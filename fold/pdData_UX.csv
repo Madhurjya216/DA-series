@@ -1,0 +1,11 @@
+Name,Age,City,Country,Salary,Department,Experience,Joining Date,Performance Score,Is Active,Last Promotion Date
+Alice,30,New York,USA,70000,HR,5,15-01-2020,4.5,TRUE,01-06-2022
+Bob,25,Los Angeles,USA,60000,Finance,3,22-03-2019,3.8,TRUE,15-08-2021
+Charlie,35,Chicago,USA,80000,IT,7,30-07-2018,4.9,FALSE,20-12-2020
+David,28,Houston,USA,75000,Marketing,4,10-05-2021,4.2,TRUE,10-02-2023
+Eve,22,Phoenix,USA,50000,Sales,2,01-11-2022,3.5,FALSE,30-09-2021
+Alice,30,New York,USA,70000,HR,5,15-01-2020,4.5,TRUE,01-06-2022
+Bob,25,Los Angeles,USA,60000,Finance,3,22-03-2019,3.8,TRUE,15-08-2021
+Charlie,35,Chicago,USA,80000,IT,7,30-07-2018,4.9,FALSE,20-12-2020
+David,28,Houston,USA,75000,Marketing,4,10-05-2021,4.2,TRUE,10-02-2023
+Eve,22,Phoenix,USA,50000,Sales,2,01-11-2022,3.5,FALSE,30-09-2021
