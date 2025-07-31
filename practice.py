@@ -90,7 +90,7 @@ df = pd.DataFrame({'date': ['2024-01-01', '2024-02-15', '2024-03-10', '2024-04-0
 df['date'] = pd.to_datetime(df['date'])
 df['year'] = df['date'].dt.year
 df['month'] = df['date'].dt.month
-print(df)
+# print(df)
 
 #  reading csv file
 # with open("fold/pdData.csv", 'r') as f:
@@ -126,7 +126,7 @@ with open("fold/pdData_UI.csv", 'r') as f:
 
 
 # df.dropna(inplace=True)  # removes rows with any NaN values
-# print(df)
+# print(df) 
 
 # print(df.describe())  # prints summary statistics of the DataFrame
 
@@ -141,3 +141,9 @@ with open("fold/pdData_UI.csv", 'r') as f:
 # ===== drop entire file ========= #
 # os.remove("fold/pdData_UI.csv")
 # print("done!")
+
+
+#  ========== file joining securely ========== #
+file_path = os.path.join("fold", "data.txt")  # Joins folder and file name safely
+df = pd.read_csv(file_path)  # Reads the CSV using the safe path
+print(df)  # Displays the DataFrame
