@@ -1,0 +1,6 @@
+CustomerId,Name,Email,SignupDate,LastLogin,Status,LoyaltyPoints
+1001,Alice,alice.johnson@example.com,2024-01-15,2024-07-01,Active,120
+1002,Bob,bob.smith@example.com,2024-02-20,2024-07-02,Inactive,80
+1003,Charlie,carol.white@example.com,2024-03-05,2024-07-03,Active,150
+1004,David,david.lee@example.com,2024-04-10,2024-07-04,Active,200
+1005,Eve,emma.wilson@example.com,2024-05-25,2024-07-05,Inactive,60

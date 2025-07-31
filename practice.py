@@ -144,6 +144,6 @@ with open("fold/pdData_UI.csv", 'r') as f:
 
 
 #  ========== file joining securely ========== #
-file_path = os.path.join("fold", "data.txt")  # Joins folder and file name safely
-df = pd.read_csv(file_path)  # Reads the CSV using the safe path
-print(df)  # Displays the DataFrame
+# file_path = os.path.join("fold", "data.txt")  # Joins folder and file name safely
+# df = pd.read_csv(file_path)  # Reads the CSV using the safe path
+# print(df)  # Displays the DataFrame 
