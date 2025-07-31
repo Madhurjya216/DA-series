@@ -1,3 +1,9 @@
+import pandas as pd
+import os
+import csv
+
+
+
 # to create data
 # data = [
 #     ["ID", "NAME", "Roll No.", "Marks"]
@@ -32,24 +38,14 @@
 #     print(content)
 
 #  ======= CSV code ======= #
-import csv
 
 data = [
-    [1, "Raj", 21, 98],
-    [2, "Rahul", 41, 95],
-    [3, "Ram", 23, 97],
-    [4, "Raja", 24, 91],
-    [5, "Rani", 25, 99],
-    [6, "Rita", 26, 96],
-    [7, "Ravi", 27, 94],
-    [8, "Rohan", 28, 93],
-    [9, "Riya", 29, 92],
-    [10, "Rohit", 30, 90],
-    [11, "Rashmi", 31, 89],
-    [12, "Rajesh", 32, 88],
-    [13, "Rakesh", 33, 87],
-    [14, "Rupal", 34, 86],
-    [15, "Ruchi", 35, 85]
+    [101, "Raj", 21, 98],
+    [102, "Rahul", 41, 95],
+    [103, "Ram", 23, 97],
+    [104, "Raja", 24, 91],
+    [105, "Rani", 25, 99],
+    [106, "Ravi", 26, 96]
 ]
 
 columns = ["ID", "NAME", "Roll No.", "Marks"]
@@ -76,25 +72,35 @@ columns = ["ID", "NAME", "Roll No.", "Marks"]
 
 
 # ========= PANDAS ========= #
-import pandas as pd
-import os
+
 
 
 # writing to file 
-# with open("fold/newData.csv", 'w') as f:
+# with open("fold/pdData_UI.csv", 'a') as f:
 #     df = pd.DataFrame(data, columns=columns)
 #     df.to_csv(f, index=False)
 #     print("Data written to CSV file using Pandas.")
 
 
 
+# Create a DataFrame with date strings
+df = pd.DataFrame({'date': ['2024-01-01', '2024-02-15', '2024-03-10', '2024-04-05',
+                            '2024-05-20', '2024-06-30']})
+
+df['date'] = pd.to_datetime(df['date'])
+df['year'] = df['date'].dt.year
+df['month'] = df['date'].dt.month
+print(df)
+
 #  reading csv file
-with open("fold/pdData.csv", 'r') as f:
-    df = pd.read_csv(f)
+# with open("fold/pdData.csv", 'r') as f:
+#     df = pd.read_csv(f)
     # print(df.fillna("Ravi"))  
 
 
-
+with open("fold/pdData_UI.csv", 'r') as f:
+    df = pd.read_csv(f)
+    # print(df)
  
 
 # with open("fold/newData.csv", 'a') as f:
@@ -126,8 +132,12 @@ with open("fold/pdData.csv", 'r') as f:
 
 
 
-df = pd.read_csv("fold/pdData.csv")
-df.dropna(inplace=True)  # removes rows with any NaN values
-df['Total'] = df['Age'] + df['Salary']  # adding
-print(df)
+# df = pd.read_csv("fold/pdData_UI.csv")
+# df.dropna(inplace=True)  # removes rows with any NaN values
+# # df['Total'] = df['Age'] + df['Salary']  # adding
+# print(df)
 
+
+# ===== drop entire file ========= #
+# os.remove("fold/pdData_UI.csv")
+# print("done!")
