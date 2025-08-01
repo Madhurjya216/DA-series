@@ -15,7 +15,8 @@ data2 = {
     "Product": ["Tablet", "Mouse", "Monitor", "Keyboard", "Tablet"],
     "Units_Sold": [8, 15, 10, 12, 6],
     "Unit_Price": [300, 22, 140, 28, 300],
-    "Total_Sales": [2400, 330, 1400, 336, 1800]
+    "Total_Sales": [2400, 330, 1400, 336, 1800],
+    "Quality": ["High", "Medium", "Low", "High", "Medium"],
 }
 
 # df = pd.DataFrame(data1)
@@ -29,7 +30,7 @@ data2 = {
 # read
 df1 = pd.read_csv("set/fold/sales_data2.csv")
 # print(df)
-print("==============================")
+# print("==============================")
 df2 = pd.read_csv("set/fold/sales_data1.csv")
 # print(df)
 
@@ -40,17 +41,17 @@ df2 = pd.read_csv("set/fold/sales_data1.csv")
 
 # df = pd.DataFrame(combined_data)
 
+# df['Region'] = ["East", "North", "West", "North", "South",
+#                 "South", "West", "South", "East", "South"] 
+
 # with open("set/fold/h1_sales.csv", 'w') as f:
 #     df.to_csv(f, index=False)
 #     print("Combined data written to CSV file.")
 
 # print(combined_data)
 
-# df = pd.read_csv("set/fold/h1_sales.csv")
+df = pd.read_csv("set/fold/h1_sales.csv")
 # print(df)
-
-
-os.remove("set/fold/h1_sales.csv")
 
 
 
@@ -70,8 +71,25 @@ os.remove("set/fold/h1_sales.csv")
 # df.to_csv("set/fold/customer_data.csv", index=False)
 # # print(df)
 
-# dataa = df.drop(columns=['Email', 'LastLogin'])
+# dataa = df.drop(columns=['region'])
 # dataaa = df[df['Status'] == 'Active']
 # print(dataa) 
 # print('===============================')
 # print(dataaa)
+
+
+#  =============================== TASK 3 ============================= #
+
+df["Quatity"] = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+df.drop(columns=['region'], inplace=True)
+
+df['Total Amount'] = df['Quatity'] * df['Unit_Price']
+
+
+df['HighValue'] = df['Total Amount'] > 1000
+print(df)
+
+with open("set/fold/h1_sales_updated.csv", 'w') as f:
+    df = pd.DataFrame(df)
+    df.to_csv(f, index=False)
+    print("Updated data written to CSV file.")
