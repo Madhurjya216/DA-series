@@ -2,22 +2,22 @@ import pandas as pd
 import os
 
 # ============================= Task 1 ============================= #
-data1 = {
-    "Date": ["2024-07-01", "2024-07-02", "2024-07-03", "2024-07-04", "2024-07-05"],
-    "Product": ["Laptop", "Mouse", "Keyboard", "Monitor", "Laptop"],
-    "Units_Sold": [5, 20, 15, 7, 3],
-    "Unit_Price": [800, 20, 30, 150, 800],
-    "Total_Sales": [4000, 400, 450, 1050, 2400]
-}
+# data1 = {
+#     "Date": ["2024-07-01", "2024-07-02", "2024-07-03", "2024-07-04", "2024-07-05"],
+#     "Product": ["Laptop", "Mouse", "Keyboard", "Monitor", "Laptop"],
+#     "Units_Sold": [5, 20, 15, 7, 3],
+#     "Unit_Price": [800, 20, 30, 150, 800],
+#     "Total_Sales": [4000, 400, 450, 1050, 2400]
+# }
 
-data2 = {
-    "Date": ["2024-07-06", "2024-07-07", "2024-07-08", "2024-07-09", "2024-07-10"],
-    "Product": ["Tablet", "Mouse", "Monitor", "Keyboard", "Tablet"],
-    "Units_Sold": [8, 15, 10, 12, 6],
-    "Unit_Price": [300, 22, 140, 28, 300],
-    "Total_Sales": [2400, 330, 1400, 336, 1800],
-    "Quality": ["High", "Medium", "Low", "High", "Medium"],
-}
+# data2 = {
+#     "Date": ["2024-07-06", "2024-07-07", "2024-07-08", "2024-07-09", "2024-07-10"],
+#     "Product": ["Tablet", "Mouse", "Monitor", "Keyboard", "Tablet"],
+#     "Units_Sold": [8, 15, 10, 12, 6],
+#     "Unit_Price": [300, 22, 140, 28, 300],
+#     "Total_Sales": [2400, 330, 1400, 336, 1800],
+#     "Quality": ["High", "Medium", "Low", "High", "Medium"],
+# }
 
 # df = pd.DataFrame(data1)
 # df = pd.DataFrame(data2)
@@ -28,10 +28,10 @@ data2 = {
 
 
 # read
-df1 = pd.read_csv("set/fold/sales_data2.csv")
+# df1 = pd.read_csv("set/fold/sales_data2.csv")
 # print(df)
-# print("==============================")
-df2 = pd.read_csv("set/fold/sales_data1.csv")
+print("==============================")
+# df2 = pd.read_csv("set/fold/sales_data1.csv")
 # print(df)
 
 
@@ -44,13 +44,18 @@ df2 = pd.read_csv("set/fold/sales_data1.csv")
 # df['Region'] = ["East", "North", "West", "North", "South",
 #                 "South", "West", "South", "East", "South"] 
 
+# df['Transactions'] = [3, 4, 7, 8, 1, 9, 5, 2, 6, 3]
+
+# df['Quality'] = [10, 20, 40, 60, 20, 80, 40, 10, 90, 70]
+
+
 # with open("set/fold/h1_sales.csv", 'w') as f:
 #     df.to_csv(f, index=False)
 #     print("Combined data written to CSV file.")
 
 # print(combined_data)
 
-df = pd.read_csv("set/fold/h1_sales.csv")
+# df = pd.read_csv("set/fold/h1_sales.csv")
 # print(df)
 
 
@@ -80,16 +85,61 @@ df = pd.read_csv("set/fold/h1_sales.csv")
 
 #  =============================== TASK 3 ============================= #
 
-df["Quatity"] = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-df.drop(columns=['region'], inplace=True)
+# df["Quatity"] = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+# df.drop(columns=['region'], inplace=True)
 
-df['Total Amount'] = df['Quatity'] * df['Unit_Price']
+# df['Total Amount'] = df['Quatity'] * df['Unit_Price']
 
 
-df['HighValue'] = df['Total Amount'] > 1000
-print(df)
+# df['HighValue'] = df['Total Amount'] > 1000
+# print(df)
 
-with open("set/fold/h1_sales_updated.csv", 'w') as f:
-    df = pd.DataFrame(df)
-    df.to_csv(f, index=False)
-    print("Updated data written to CSV file.")
+# with open("set/fold/h1_sales_updated.csv", 'w') as f:
+#     df = pd.DataFrame(df)
+#     df.to_csv(f, index=False)
+#     print("Updated data written to CSV file.")
+
+
+#  ================================ TASK 4 ============================= #
+# df = pd.read_csv("set/fold/h1_s/
+# 
+
+# con = df.groupby('Region').agg({
+#     "Total_Sales": "sum",
+#     "Quality": "mean",
+#     "Transactions": "count"
+# })
+
+# con = df.rename(columns={"Total_Sales": "TotalRevenue", "Quality": "AvgQty", "Transactions": "TxnCount"})
+# # print(con)
+# conn = con.groupby('Region')['TotalRevenue'].count()
+# print(conn)
+
+
+#  =========================== FILTERING ============================= #
+# myData = [
+#     [ "S001","Guest",3,120,0,"2025-08-01"],
+#     ["S002","Member",5,300,0,"2025-08-01"],
+#     ["S003","Guest",1,45,1,"2025-08-02"],
+#     ["S004","Member",4,200,0,"2025-08-02"],
+#     ["S005","Guest",2,80,0,"2025-08-03"],
+#     ["S006","Member",6,400,0,"2025-08-03"],
+#     ["S007","Guest",1,30,1,"2025-08-03"],
+#     ["S008","Member",3,150,0,"2025-08-04"],
+#     ["S009","Guest",4,180,0,"2025-08-04"],
+#     ["S010","Member",2,90,0,"2025-08-05"],
+# ]
+
+# columns = ["SessionID", "UserType", "PageViews", "DurationSec", "Bounce", "Date"]
+
+# df = pd.DataFrame(myData, columns=columns)
+
+
+# with open("set/fold/web_traffic.csv", 'w') as f:
+#     df.to_csv(f, index=False)
+    # print("created!")
+
+
+with open("set/fold/web_traffic.csv") as f:
+    df = pd.read_csv(f)
+    print(df)
