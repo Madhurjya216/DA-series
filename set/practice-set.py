@@ -140,6 +140,71 @@ print("==============================")
     # print("created!")
 
 
-with open("set/fold/web_traffic.csv") as f:
-    df = pd.read_csv(f)
-    print(df)
+# with open("set/fold/web_traffic.csv") as f:
+    # df = pd.read_csv(f)
+    # print(df)
+    # con = df[df["UserType"] == 'Member']
+
+    # con = df[(df["UserType"] == 'Member') & (df['PageViews'] >= 4) & (df['Bounce'] == 0)]
+    
+
+    # con = df.sort_values(by="DurationSec", ascending=False)
+    # print(con.head(10))
+
+
+# ============================================ DYNAMIC COLUMN HANDLING ========================================== #
+
+# data = [
+#     [1,"John Doe","john@example.com","Spring Sale",123,"abc",250,"xyz"],
+#     [2,"Jane Smith","jane@example.com","Summer Promo",456,"def",300,789],
+#     [3,"Bob Johnson","bob@example.com","Fall Discount",789,"ghi",150,101]
+# ]
+
+# columns = ["CustomerID","Name","Email","Campaign","TempData","UnusedMetrics","PurchaseAmount","Unused"]
+
+# df = pd.DataFrame(data, columns=columns)
+
+# with open("set/fold/marketing_campaign.csv", "w") as f:
+#     df.to_csv(f, index=False)
+#     print("created!")
+
+
+
+# df = pd.read_csv("set/fold/marketing_campaign.csv")
+
+# drop_data = [col for col in df.columns if 'TempData' in col or 'Unused' in col]
+# # drop_data = [col for col in df.columns if 'TempData' in col or 'Unused' in col]
+
+# newData = df.drop(columns=drop_data)
+
+# df = pd.DataFrame(newData)
+
+# with open("set/fold/marketing_campaign.csv", "w") as f:
+#    df.to_csv(f, index=False) 
+#    print("done!")
+
+
+
+#  ================================= Complex Group‑Filter‑Aggregate Pipeline ================================== #
+data = [
+    [1,1001,"Electronics","2025-05-15",12000],
+    [2,1002,"Clothing","2025-06-20",4000],
+    [3,1003,"Home","2025-07-10",15000],
+    [4,1002,"Electronics","2025-07-22",8000],
+    [5,1004,"Furniture","2025-03-30",7000],
+    [6,1005,"Electronics","2025-06-25",30000],
+    [7,1001,"Clothing","2025-07-15",6000]
+]
+
+# columns = ["OrderID","CustomerID","ProductCategory","OrderDate","SalesAmount"]
+
+
+# df = pd.DataFrame(data, columns=columns)
+
+# with open("set/fold/orders.csv", "w") as f:
+#     df.to_csv(f, index=False)
+
+
+
+df = pd.read_csv("set/fold/orders.csv")
+print(df)

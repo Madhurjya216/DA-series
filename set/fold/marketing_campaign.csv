@@ -1,0 +1,8 @@
+CustomerID,Name,Email,Campaign,PurchaseAmount
+1,John Doe,john@example.com,Spring Sale,250.0
+2,Jane Smith,jane@example.com,Summer Promo,300.0
+3,Bob Johnson,bob@example.com,Fall Discount,150.0
+CustomerID,Name,Email,Campaign,
+1,John Doe,john@example.com,Spring Sale,
+2,Jane Smith,jane@example.com,Summer Promo,
+3,Bob Johnson,bob@example.com,Fall Discount,
