@@ -1,0 +1,9 @@
+RespondentID,Age,Gender,SatisfactionScore,Comments
+101,25.0,Male,5.0,Good
+102,,Female,4.0,
+103,30.0,,,Average
+104,,Female,3.0,Poor
+105,22.0,Male,,Excellent
+abc,xyz,unknown,bad,oops
+999,,,,
+106,40,Male,2,Average comment

@@ -206,5 +206,104 @@ data = [
 
 
 
-df = pd.read_csv("set/fold/orders.csv")
-print(df)
+# df = pd.read_csv("set/fold/orders.csv")
+
+
+# con = df.groupby("ProductCategory").agg({
+#     "SalesAmount": "sum",
+#     # "CustomerID": "unique"
+# })
+
+# conn = con[con["SalesAmount"] > 50000]
+
+# res = df.sort_values(by="SalesAmount", ascending=False)
+
+# print(res)
+
+
+
+
+
+
+#  ============================================ question 9 ===================================================== #
+
+# import numpy as np
+
+# num_customers = 10
+# customer_ids = range(1, num_customers + 1)
+# emails = [f'user{cid}@example.com' for cid in customer_ids]
+# statuses = np.random.choice(['Active', 'Inactive'], size=num_customers)
+# signup_dates = pd.to_datetime(np.random.choice(pd.date_range('2020-01-01', '2023-01-01'), size=num_customers))
+
+# # Create DataFrame
+# df = pd.DataFrame({
+#     'CustomerID': customer_ids,
+#     'Email': emails,
+#     'Status': statuses,
+#     'SignupDate': signup_dates
+# })
+
+# con = df.drop(columns="Email")
+
+# conn = con[con["Status"] == "Active"]
+
+# today = pd.Timestamp('now')
+# conn['DaysSinceSignup'] = (today - pd.to_datetime(df['SignupDate'])).dt.days
+
+# connn = conn.sort_values(by="DaysSinceSignup", ascending=False)
+
+# print(connn)    
+
+
+
+# ======================================== question 10 =========================================== #
+# import pandas as pd
+import numpy as np
+import os
+
+# Create sample data with some missing values
+# data = {
+#     'RespondentID': [101, 102, 103, 104, 105],
+#     'Age': [25, np.nan, 30, None, 22],
+#     'Gender': ['Male', 'Female', None, 'Female', 'Male'],
+#     'SatisfactionScore': [5, 4, None, 3, np.nan],
+#     'Comments': ['Good', None, 'Average', 'Poor', 'Excellent']
+# }
+
+# # Convert to DataFrame
+# df = pd.DataFrame(data)
+
+# # Add some corrupted/erroneous rows (simulating malformed data)
+# corrupted_rows = [
+#     ['abc', 'xyz', 'unknown', 'bad', 'oops'],    # nonsensical data
+#     [999, None, None, None, None],               # many nulls
+#     [106, 40, 'Male', 2, 'Average comment']      # normal row
+# ]
+
+# # Convert corrupted rows to DataFrame
+# corrupted_df = pd.DataFrame(corrupted_rows, columns=df.columns)
+
+# # Concatenate to mimic a CSV with both valid and corrupted data
+# full_df = pd.concat([df, corrupted_df], ignore_index=True)
+
+# # Save to CSV
+# full_df.to_csv('set/fold/survey_responses.csv', index=False)
+
+# print("Sample 'survey_responses.csv' created.")
+
+
+
+
+df = pd.read_csv("set/fold/survey_responses.csv")
+
+
+responses = pd.read_csv('survey_responses.csv', error_bad_lines=True)
+
+# Step 2: Drop rows with more than 2 nulls
+responses_cleaned = responses[responses.isnull().sum(axis=1) <= 2]
+
+# Step 3: Fill missing values in numeric columns with the median
+numeric_cols = responses_cleaned.select_dtypes(include='number').columns
+responses_cleaned[numeric_cols] = responses_cleaned[numeric_cols].fillna(responses_cleaned[numeric_cols].median())
+
+print(responses_cleaned)
