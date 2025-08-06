@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import csv
+import json
 
 
 
@@ -84,12 +85,12 @@ columns = ["ID", "NAME", "Roll No.", "Marks"]
 
 
 # Create a DataFrame with date strings
-df = pd.DataFrame({'date': ['2024-01-01', '2024-02-15', '2024-03-10', '2024-04-05',
-                            '2024-05-20', '2024-06-30']})
+# df = pd.DataFrame({'date': ['2024-01-01', '2024-02-15', '2024-03-10', '2024-04-05',
+#                             '2024-05-20', '2024-06-30']})
 
-df['date'] = pd.to_datetime(df['date'])
-df['year'] = df['date'].dt.year
-df['month'] = df['date'].dt.month
+# df['date'] = pd.to_datetime(df['date'])
+# df['year'] = df['date'].dt.year
+# df['month'] = df['date'].dt.month
 # print(df)
 
 #  reading csv file
@@ -98,8 +99,8 @@ df['month'] = df['date'].dt.month
     # print(df.fillna("Ravi"))  
 
 
-with open("fold/pdData_UI.csv", 'r') as f:
-    df = pd.read_csv(f)
+# with open("fold/pdData_UI.csv", 'r') as f:
+    # df = pd.read_csv(f)
     # print(df)
  
 
@@ -147,3 +148,37 @@ with open("fold/pdData_UI.csv", 'r') as f:
 # file_path = os.path.join("fold", "data.txt")  # Joins folder and file name safely
 # df = pd.read_csv(file_path)  # Reads the CSV using the safe path
 # print(df)  # Displays the DataFrame 
+
+
+
+# ===================================== JSON file handling - pandas =========================================== #
+
+data = [
+  {"name": "Alice", "age": 25, "city": "Delhi"},
+  {"name": "Bob", "age": 30, "city": "Mumbai"}
+]
+
+
+# with open("fold/data.json", "w") as f:
+#     json.dump(data, f, indent=4)
+#     print("done!")
+
+
+
+# with open("fold/data.json") as f:
+#     data = json.load(f)
+#     print(data)
+
+# ============== with pandas ============== #
+# data = {
+#     'name': ['Alice', 'Bob'],
+#     'age': [25, 30]
+# }
+
+
+# data = pd.DataFrame(data)
+
+# with open("fold/data.json") as f:
+#     data.to_json(f, index=False)
+#     print("done!")
+

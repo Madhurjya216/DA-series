@@ -354,3 +354,7 @@ print(df.groupby('Name')['Salary'].agg(['mean', 'sum', 'max']))
 
 df = pd.read_csv("fold/pdData.csv")
 # print(df)
+
+
+
+
