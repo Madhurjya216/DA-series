@@ -153,32 +153,19 @@ columns = ["ID", "NAME", "Roll No.", "Marks"]
 
 # ===================================== JSON file handling - pandas =========================================== #
 
-data = [
-  {"name": "Alice", "age": 25, "city": "Delhi"},
-  {"name": "Bob", "age": 30, "city": "Mumbai"}
-]
+    # data = [
+    # {"name": "Alice", "age": 25, "city": "Delhi"},
+    # {"name": "Bob", "age": 30, "city": "Mumbai"}
+    # ]
 
 
-# with open("fold/data.json", "w") as f:
-#     json.dump(data, f, indent=4)
-#     print("done!")
+    # with open("fold/data.json", "w") as f:
+    #     json.dump(data, f, indent=4)
+    #     print("done!")
 
 
 
-# with open("fold/data.json") as f:
-#     data = json.load(f)
-#     print(data)
-
-# ============== with pandas ============== #
-# data = {
-#     'name': ['Alice', 'Bob'],
-#     'age': [25, 30]
-# }
-
-
-# data = pd.DataFrame(data)
-
-# with open("fold/data.json") as f:
-#     data.to_json(f, index=False)
-#     print("done!")
+    # with open("fold/data.json") as f:
+    #     data = json.load(f)
+    #     print(data)
 

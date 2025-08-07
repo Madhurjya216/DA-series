@@ -1,12 +1,17 @@
-[
-    {
-        "name": "Alice",
-        "age": 25,
-        "city": "Delhi"
-    },
-    {
-        "name": "Bob",
-        "age": 30,
-        "city": "Mumbai"
-    }
-]
+{
+  "name": {
+    "0": "Alice",
+    "1": "Bob",
+    "2": "Charlie"
+  },
+  "age": {
+    "0": 25,
+    "1": 30,
+    "2": 35
+  },
+  "city": {
+    "0": "New York",
+    "1": "Los Angeles",
+    "2": "Chicago"
+  }
+}

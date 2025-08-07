@@ -1,3 +1,7 @@
+import pandas as pd
+
+
+
 # a = 65342
 # print(a)
 
@@ -246,23 +250,23 @@
 
 
 # file handling - using pandas #
-import pandas as pd
+
 
 
 # writing to csv file
-data = {
-    "Name": ["Alice", "Bob", "Charlie", "David", "Eve", "madhurjya"],
-    "Age": [30, 25, 35, 28, 22],
-    "City": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Delhi"],
-    "Country": ["USA", "USA", "USA", "USA", "USA", "India"],
-    "Salary": [70000, 60000, 80000, 75000, 50000, 60000],
-    "Department": ["HR", "Finance", "IT", "Marketing", "Sales", "Development"],
-    "Experience": [5, 3, 7, 4, 2],
-    "Joining Date": ["2020-01-15", "2019-03-22", "2018-07-30", "2021-05-10", "2022-11-01", "2023-01-20"],
-    "Performance Score": [4.5, 3.8, 4.9, 4.2, 3.5, 4.0],
-    "Is Active": [True, True, False, True, False, True],
-    "Last Promotion Date": ["2022-06-01", "2021-08-15", "2020-12-20", "2023-02-10", "2021-09-30", "2023-03-05"],
-}
+# data = {
+#     "Name": ["Alice", "Bob", "Charlie", "David", "Eve", "madhurjya"],
+#     "Age": [30, 25, 35, 28, 22],
+#     "City": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Delhi"],
+#     "Country": ["USA", "USA", "USA", "USA", "USA", "India"],
+#     "Salary": [70000, 60000, 80000, 75000, 50000, 60000],
+#     "Department": ["HR", "Finance", "IT", "Marketing", "Sales", "Development"],
+#     "Experience": [5, 3, 7, 4, 2],
+#     "Joining Date": ["2020-01-15", "2019-03-22", "2018-07-30", "2021-05-10", "2022-11-01", "2023-01-20"],
+#     "Performance Score": [4.5, 3.8, 4.9, 4.2, 3.5, 4.0],
+#     "Is Active": [True, True, False, True, False, True],
+#     "Last Promotion Date": ["2022-06-01", "2021-08-15", "2020-12-20", "2023-02-10", "2021-09-30", "2023-03-05"],
+# }
 
 
 # df = pd.DataFrame(data)
@@ -301,12 +305,12 @@ data = {
 
 
 # ====== flltering data ====== #
-with open("fold/pdData.csv", "r") as f:
-    df = pd.read_csv(f)
+# with open("fold/pdData.csv", "r") as f:
+    # df = pd.read_csv(f)
     # df.drop_duplicates(inplace=True)  # Remove duplicates in place
     # print("=========================================================")
     # print(df[(df['Name'] == 'Bob')  & (df['Salary'] >= 60000)] )
-    print("=========================================================")
+    # print("=========================================================")
 # 
 
 
@@ -336,7 +340,7 @@ with open("fold/pdData.csv", "r") as f:
 
 
 # ======= grouping data =========== #
-con = df.groupby('Name')['Age'].mean()
+# con = df.groupby('Name')['Age'].mean()
 # print(con)
 
 # df.drop_duplicates(inplace=True)
@@ -349,12 +353,44 @@ con = df.groupby('Name')['Age'].mean()
 # print(con)
 
 # Multiple aggregations for Salary
-print(df.groupby('Name')['Salary'].agg(['mean', 'sum', 'max']))
+# print(df.groupby('Name')['Salary'].agg(['mean', 'sum', 'max']))
 
 
-df = pd.read_csv("fold/pdData.csv")
+# df = pd.read_csv("fold/pdData.csv")
 # print(df)
 
 
 
+
+# ==================================== JSON DATA ========================================= #
+# Example DataFrame
+# df = pd.DataFrame({
+#     'name': ['Alice', 'Bob', 'Charlie'],
+#     'age': [25, 30, 35],
+#     'city': ['New York', 'Los Angeles', 'Chicago']
+# })
+
+# df.to_json("fold/data.json", indent=2, orient='columns')
+
+
+# df = pd.read_json("fold/data.json")
+# print(df)
+
+import json
+
+
+
+data_set = """ [
+    
+    {
+        "Name": "Madhurjya",
+        "age": 29    }
+
+] """
+
+data = json.loads(data_set)
+
+df = pd.DataFrame(data)
+
+print(df)
 
