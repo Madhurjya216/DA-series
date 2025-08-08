@@ -376,21 +376,22 @@ import pandas as pd
 # df = pd.read_json("fold/data.json")
 # print(df)
 
-import json
 
 
 
-data_set = """ [
-    
-    {
-        "Name": "Madhurjya",
-        "age": 29    }
+data = {
+  "name": "Alice",
+  "location": {
+    "city": "New York",
+    "state": "NY"
+  },
+  "pets": [
+    {"tree": "dog", "name": "Rex"},
+    {"type": "cat", "name": "Whiskers"}
+  ]
+}
 
-] """
-
-data = json.loads(data_set)
-
-df = pd.DataFrame(data)
-
+# Normalize the JSON data
+df = pd.json_normalize(data)
 print(df)
 
