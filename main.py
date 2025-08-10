@@ -379,19 +379,48 @@ import pandas as pd
 
 
 
-data = {
-  "name": "Alice",
-  "location": {
-    "city": "New York",
-    "state": "NY"
-  },
-  "pets": [
-    {"tree": "dog", "name": "Rex"},
-    {"type": "cat", "name": "Whiskers"}
-  ]
-}
+# data = {
+#   "name": "Alice",
+#   "location": {
+#     "city": "New York",
+#     "state": "NY"
+#   },
+#   "pets": [
+#     {"tree": "dog", "name": "Rex"},
+#     {"type": "cat", "name": "Whiskers"}
+#   ]
+# }
+
+
+
+nested_data = [
+    {
+        "id": 1,
+        "name": "Alice",
+        "contact": {
+            "email": "alice@example.com",
+            "phones": ["+1-202-555-0147", "+1-202-555-0172"]
+        },
+        "projects": [
+            {"title": "AI Research", "budget": 50000, "team": ["Alice", "Bob"]},
+            {"title": "Web App", "budget": 20000, "team": ["Alice", "Charlie"]}
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Bob",
+        "contact": {
+            "email": "bob@example.com",
+            "phones": ["+1-202-555-0183"]
+        },
+        "projects": [
+            {"title": "Cloud Migration", "budget": 75000, "team": ["Bob", "Eve"]}
+        ]
+    }
+]
+
 
 # Normalize the JSON data
-df = pd.json_normalize(data)
+df = pd.json_normalize(nested_data)
 print(df)
 
