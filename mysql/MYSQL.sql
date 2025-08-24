@@ -49,6 +49,8 @@ SELECT SUM(Quantity * UnitPrice * (1 - Discount/100)) AS total_revenue_after_dis
 FROM sales_data;
 
 
+SELECT REGION ;
+
 
 
 Select * from sales_data;
