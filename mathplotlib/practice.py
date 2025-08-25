@@ -38,3 +38,42 @@ import json
 # plt.show()
 
 # print(df)
+
+
+# trail data set - MATPLOTLIB
+
+# SET 1:
+# x = [1,2,3,4,5] 
+# y = [2,4,6,8,10]
+
+# plt.plot(x, y, color='red', marker='o', linestyle='dashed')
+# plt.xlabel("X Axis")
+# plt.ylabel("Y Axis")
+# plt.title("Simple Plot")
+# plt.grid(True)
+# plt.show()
+
+
+# SET 2:
+# fruits = ["Apple", "Banana", "Cherry", "Date"]
+# sales = [40, 25, 30, 10]
+
+
+# plt.bar(fruits, sales, color=['red', 'yellow', 'pink', 'brown'])
+# plt.show()
+
+
+# SET 3:
+# fruits = ["Apple", "Banana", "Cherry", "Date"]
+# sales = [40, 25, 30, 10]
+
+# plt.pie(sales, labels=fruits, autopct='%1.1f%%')
+# plt.legend()
+# plt.show()
+
+import numpy as np
+x = np.random.randint(1, 50, 20)
+y = np.random.randint(1, 50, 20)
+
+plt.plot(x, y, marker='x')
+plt.show()
